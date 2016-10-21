@@ -269,7 +269,11 @@ else
   JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.rmi.port=$JMX_PORT"
 
   # turn on JMX authentication. See below for further options
+  <% if node['cassandra']['jmx_authenticate'] -%>
   JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.authenticate=true"
+  <% else %>
+  JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.authenticate=false"
+  <% end -%>
 
   # jmx ssl options
   #JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.ssl=true"

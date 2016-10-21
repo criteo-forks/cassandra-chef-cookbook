@@ -30,6 +30,8 @@ default['cassandra']['dir_mode'] = '0755'
 default['cassandra']['service_action'] = [:enable, :start]
 default['cassandra']['jmx_port'] = 7199
 default['cassandra']['local_jmx'] = true
+default['cassandra']['jmx_authenticate'] = true
+
 
 default['cassandra']['limits']['memlock'] = 'unlimited'
 default['cassandra']['limits']['nofile'] = 48_000
