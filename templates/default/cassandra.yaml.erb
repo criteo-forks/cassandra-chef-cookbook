@@ -2,4 +2,9 @@
 # This file is managed by Chef.
 # Do NOT modify this file directly.
 #
+# We put the Cassandra version number here
+# to force a restart on Cassandra upgrade
+#
+# version : <%= node['cassandra']['version'] %>
+#
 <%= cassandra_yaml_config(node['cassandra']['config']) %>
