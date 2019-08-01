@@ -14,7 +14,7 @@ Group=<%= node['cassandra']['group'] %>
 StandardOutput=journal
 StandardError=inherit
 Environment="CASSANDRA_HOME=<%= node['cassandra']['installation_dir'] %>" "CASSANDRA_CONF=<%= node['cassandra']['conf_dir'] %>"
-LimitNOFILE=infinity
+LimitNOFILE=999999
 TimeoutStopSec=10min
 Restart=<%= node['cassandra']['systemd']['restart_condition'] %>
 PIDFile=<%= node['cassandra']['pid_dir'] %>/cassandra.pid
